@@ -200,7 +200,6 @@ public class scientificCalculator {
                     valid = false;
                     System.out.println("Invalid choice.");
             }
-
             if (valid) {
                 System.out.println("Result: " + result);
             }
@@ -213,30 +212,24 @@ public class scientificCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
-
         char continueChoice;
-
         do {
             displayMenu();
             while (!scanner.hasNextInt()) {
                 System.out.print("Please enter a valid number: ");
                 scanner.next();
             }
-
             choice = scanner.nextInt();
-
             if (choice != 0) {
                 performOperation(scanner, choice);
                 System.out.print("(Y/y to continue): ");
                 continueChoice = scanner.next().charAt(0);
             } else {
-                System.out.println("Calculator closed.");
+                System.out.println("closing calculator...");
                 break;
             }
         } while (continueChoice == 'Y' || continueChoice == 'y');
-        System.out.println("Calculator closed.");
-
-
+        System.out.println("closing calculator...");
         scanner.close();
     }
 }
